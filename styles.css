@@ -1,0 +1,204 @@
+:root{
+  --bg:#eaf6fb;
+  --card:#ffffff;
+  --accent:#e6f24a; /* yellow-green accent */
+  --muted:#95a5a6;
+  --dark:#09202a;
+  --panel:#07212a;
+  --radius:14px;
+  --glass: rgba(255,255,255,0.85);
+  --shadow: 0 18px 30px rgba(7,25,34,0.12);
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#f4fbff 0%, #eaf6fb 50%);
+  color:#07212a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px;
+}
+
+/* hero background panel */
+.hero{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  padding:40px;
+}
+
+/* card */
+.card{
+  display:flex;
+  background:var(--card);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  align-items:stretch;
+}
+
+/* left form */
+.card-left{
+  padding:28px 28px 32px 28px;
+  width:55%;
+  min-width:320px;
+}
+
+.card-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.card-header h2{
+  margin:0;
+  font-size:1.1rem;
+  color:var(--dark);
+  font-weight:600;
+}
+
+.clear-btn{
+  background:none;
+  border:none;
+  color:var(--muted);
+  text-decoration:underline;
+  cursor:pointer;
+  font-size:0.9rem;
+  padding:4px;
+}
+
+/* form fields */
+.field{display:block;margin-bottom:14px}
+.label{display:block;font-size:0.82rem;color:#6b8086;margin-bottom:6px}
+
+.input-prefix, .input-suffix{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#f7fbfb;
+  border:1px solid #e1eef0;
+  padding:10px 12px;
+  border-radius:8px;
+}
+
+.input-prefix .prefix{
+  background:#f0f7f8;
+  padding:6px 8px;
+  border-radius:6px;
+  color:#2b4850;
+  font-weight:600;
+  font-size:0.95rem;
+}
+
+.input-suffix .suffix{
+  background:#f0f7f8;
+  padding:6px 8px;
+  border-radius:6px;
+  color:#2b4850;
+  font-weight:600;
+  font-size:0.9rem;
+}
+
+input[type="number"]{
+  border:0;
+  background:transparent;
+  outline:none;
+  font-size:1rem;
+  width:100%;
+}
+
+/* small fields */
+.row{display:flex;gap:12px;margin-bottom:12px}
+.field.small{flex:1}
+
+/* mortgage type */
+.mortgage-type{
+  border:0;
+  padding:0;
+  margin:6px 0 16px 0;
+}
+
+.mortgage-type .label{margin-bottom:8px}
+
+.radio{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#fff7d6;
+  border:1px solid #efe7b3;
+  padding:10px 12px;
+  border-radius:8px;
+  margin-bottom:8px;
+}
+
+.radio input{accent-color:#dfe94b}
+
+/* actions */
+.actions{margin-top:8px}
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn.primary{
+  background:linear-gradient(180deg,#d9e92b,#c3d403);
+  color:#07212a;
+}
+
+/* right panel */
+.card-right{
+  padding:28px 28px;
+  width:45%;
+  background:linear-gradient(180deg,#07212a 0%, #082428 100%);
+  color: #cfeaf0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:10px;
+  border-top-right-radius:var(--radius);
+  border-bottom-right-radius:var(--radius);
+}
+
+.card-right h3{margin:0;color:#eaf9fb}
+.results-explainer{font-size:0.86rem;color:rgba(255,255,255,0.75);margin:6px 0 12px 0}
+
+.result-panel{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  padding:18px;
+  border-radius:10px;
+  margin-top:6px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.result-title{font-size:0.9rem;color:#8fbcc3;margin-bottom:8px}
+.result-amount{
+  font-size:2.2rem;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.result-small{display:flex;justify-content:space-between;color:#d6eef1;font-size:0.95rem}
+
+hr{border:0;height:1px;background:rgba(255,255,255,0.03);margin:12px 0}
+
+/* responsive */
+@media (max-width:880px){
+  .card{flex-direction:column}
+  .card-left, .card-right{width:100%}
+  .hero{padding:18px}
+}
